@@ -9,7 +9,7 @@
   </author>   
 
   <preference name="debuggable" value="false" />
-  <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+  <gap:plugin name="org.apache.cordova.splashscreen" />
 	
   <platform name="android">	
     <icon src="www/img/icon.png" /> 
