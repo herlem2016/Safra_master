@@ -71,7 +71,8 @@
 		}
 		
 		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
-		function ondeviceready() {				
+		function ondeviceready() {	
+			window.body.style.backgroundColor="blue";
 			if(!window.navigator.onLine){
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
