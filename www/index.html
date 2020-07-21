@@ -66,18 +66,15 @@
 		}
 		
 		
-		function WebViewLista(){
-			try{
-				window.frames["app"].postMessage({funcion:"IsPhoneGap"},'*');
-			}catch(e){alert(e.message);}
-		}
-		
 		window.onload= function(){
 			ondeviceready();
 		}		
 		
 		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
-		function ondeviceready() {	
+		function ondeviceready(ev) {
+
+			if(ev) EjecutarRemoto({funcion:"IsPhoneGap"},'*');
+		
 			if(!window.navigator.onLine){
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
@@ -96,9 +93,9 @@
 					cordova.plugins.notification.badge.set(0);
 				}*/
 				if (data.modulo == 1){
-					window.frames["app"].postMessage({funcion:"ActivarAlarma_",params:[data.contenidovoz]},'*');
+					EjecutarRemoto({funcion:"ActivarAlarma_",params:[data.contenidovoz]},'*');
 				}else{
-					window.frames["app"].postMessage({funcion:"PantallaMostrar",params:["notificaciones", "section"]},'*');
+					EjecutarRemoto({funcion:"PantallaMostrar",params:["notificaciones", "section"]},'*');
 				} 
 			});
 		}
@@ -127,7 +124,7 @@
 					function (results) {
 						if(results.length > 0) {							
 							try{
-								window.frames["app"].postMessage({funcion:'CargarImagenPhoneGap',params:[results[results.length-1]]},'*');
+								EjecutarRemoto({funcion:'CargarImagenPhoneGap',params:[results[results.length-1]]},'*');
 							}catch(e){alert(e.message);}
 						};	
 					}, function (error) {
@@ -150,7 +147,7 @@
 				  if(err){
 					alert("Ocurrio un error al inicializar escaner");
 				  } else {
-					window.frames["app"].postMessage({funcion:'ResultadoQr',dato:text},'*');
+					EjecutarRemoto({funcion:'ResultadoQr',dato:text},'*');
 				  }
 				});
 				QRScanner.show();
@@ -175,16 +172,15 @@
 			$("body").removeClass("transparent-body");
 		}
 				
-		window.addEventListener("message", function(event) {
+		function EjecutarEnDispositivo(data){
 			try{
-				switch(event.data.funcion){
+				switch(data.funcion){
 					case "Conectar": Conectar();break;
 					case "SeleccionarImagenes": SeleccionarImagenes();break;
-					case "SuscribirNotificaciones": SuscribirNotificaciones(event.data.datos);break;
-					case "DesSuscribirNotificaciones": DesSuscribirNotificaciones(event.data.datos);break;
-					case "downloadFile": downloadFile(event.data.datos);break;
-					case "WebViewLista": WebViewLista();break;
-					case "ResultadoValidacionQR": ResultadoValidacionQR(event.data.datos);break;
+					case "SuscribirNotificaciones": SuscribirNotificaciones(data.datos);break;
+					case "DesSuscribirNotificaciones": DesSuscribirNotificaciones(data.datos);break;
+					case "downloadFile": downloadFile(data.datos);break;
+					case "ResultadoValidacionQR": ResultadoValidacionQR(data.datos);break;
 					case "ObtenerQR": ObtenerQR();break;
 				}
 			}catch(e){alert(e.message);}
