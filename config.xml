@@ -79,8 +79,13 @@
   
   <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application android:usesCleartextTraffic="true" android:theme="@style/Theme.Transparent"/>
+            <application android:usesCleartextTraffic="true" />
         </edit-config>
+		
+		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
+			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+		</edit-config>
+		
     </platform>
 	
 </widget>
