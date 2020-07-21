@@ -9,7 +9,7 @@
   </author>   
 
   <preference name="debuggable" value="false" />
-  <gap:plugin name="org.apache.cordova.splashscreen" />
+  <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	
   <platform name="android">	
     <icon src="www/img/icon.png" /> 
@@ -79,7 +79,7 @@
   
   <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application android:usesCleartextTraffic="true" />
+            <application android:usesCleartextTraffic="true" android:theme="@style/Theme.Transparent"/>
         </edit-config>
     </platform>
 	
