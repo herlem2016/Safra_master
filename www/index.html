@@ -72,7 +72,28 @@
 		
 		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
 		function ondeviceready() {	
+			if(!window.navigator.onLine){
+				alert("Ups! Parece que no tiene conexión a internet.");
+			}
 			
+			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
+				document.body.innerHTML=dom;		
+			});
+			
+			FCMPlugin.onNotification(function(data){
+				cordova.plugins.backgroundMode.enable();
+				cordova.plugins.backgroundMode.moveToBackground();
+				cordova.plugins.autoStart.enable();
+				cordova.plugins.notification.badge.increase(1, function () { }); 
+				/*if(data.wasTapped){
+					cordova.plugins.notification.badge.set(0);
+				}*/
+				if (data.modulo == 1){
+					window.frames["app"].postMessage({funcion:"ActivarAlarma_",params:[data.contenidovoz]},'*');
+				}else{
+					window.frames["app"].postMessage({funcion:"PantallaMostrar",params:["notificaciones", "section"]},'*');
+				} 
+			});
 		}
 		
 		var i_unsubs = 0;
