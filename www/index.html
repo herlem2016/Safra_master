@@ -76,9 +76,9 @@
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
 			
-			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
+			/*$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
 				document.body.innerHTML=dom;		
-			});
+			});*/
 			
 			FCMPlugin.onNotification(function(data){
 				cordova.plugins.backgroundMode.enable();
