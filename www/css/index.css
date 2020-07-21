@@ -41,7 +41,6 @@ fieldset {
 }
 
 .pantalla {
-    border-bottom: 1px solid #b6ff00;
     position: absolute;
     left: 0px;
     top: 34px;
@@ -834,7 +833,7 @@ button.del-btn {
 textarea{}
 
 .buscador p, div.leyenda p {
-    width: 90%;
+    width: 80%;
     display: block;
     margin: auto;
     margin-top: 15px;
