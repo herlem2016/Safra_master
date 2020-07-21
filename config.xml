@@ -8,12 +8,12 @@
     Softronel Team
   </author>   
   
-  <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	
   <platform name="android">	
     <icon src="www/img/icon.png" /> 
     <resource-file src="google-services.json" target="app/google-services.json" />
 	<preference name="android-targetSdkVersion" value="28" />
+	<plugin name="cordova-plugin-splashscreen" source="npm"/>
 	<preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="ShowSplashScreenSpinner" value="false" />
@@ -26,6 +26,7 @@
   
 	<platform name="ios">
 		<resource-file src="GoogleService-Info.plist" />
+  <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	</platform>
    
     <platform name="ios">
