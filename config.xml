@@ -8,6 +8,7 @@
     Softronel Team
   </author>   
   
+  <preference name="debuggable" value="false" />
 	
   <platform name="android">	
     <icon src="www/img/icon.png" /> 
@@ -15,6 +16,10 @@
 	<preference name="android-targetSdkVersion" value="28" />
 	<plugin name="cordova-plugin-splashscreen" source="npm"/>
 	<preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
 	<splash src="www/img/icon.png" />
   </platform>
