@@ -18,6 +18,12 @@
         var url = "http://frt.hopto.org:85/";
         var urlLocal = "http://localhost:50068";
         $.support.cors = true;
+		$.ajaxSetup({
+			xhrFields: {
+			   withCredentials: true
+			},
+			crossDomain: true
+		});
 
     </script>
 	<script type="text/javascript">
@@ -65,6 +71,10 @@
 				window.frames["app"].postMessage({funcion:"IsPhoneGap"},'*');
 			}catch(e){alert(e.message);}
 		}
+		
+		window.onload= function(){
+			ondeviceready();
+		}		
 		
 		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
 		function ondeviceready() {	
