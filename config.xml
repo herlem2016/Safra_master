@@ -16,6 +16,7 @@
 	<preference name="android-targetSdkVersion" value="28" />
 	<plugin name="cordova-plugin-splashscreen" source="npm"/>
 	<preference name="SplashScreen" value="splash" />
+	<preference name="SplashScreenBackgroundColor" value="0x0000FFFF"/>
     <preference name="SplashScreenDelay" value="10000" />
 	<splash src="logo.png" />
   </platform>
