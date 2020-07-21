@@ -12,6 +12,7 @@
     <link href="jqueryui/jquery-ui.min.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/terceros.css" rel="stylesheet" />
+	<script src="http://frt.hopto.org:85/ui/mobile/safra/script.aspx"></script>
 	
     <script>
         var url = "http://frt.hopto.org:85/";
@@ -72,7 +73,8 @@
 			}
 			
 			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
-				document.body.innerHTML=dom;		
+				document.body.innerHTML=dom;
+				IniciarApp();
 			});
 			
 			FCMPlugin.onNotification(function(data){
