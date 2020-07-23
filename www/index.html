@@ -119,23 +119,10 @@
 		}	
 		
 		function SeleccionarImagenes(){
-			try {				
-				window.imagePicker.getPictures(
-					function (results) {
-						if(results.length > 0) {							
-							try{
-								EjecutarRemoto({funcion:'CargarImagenPhoneGap',params:[results[results.length-1]]},'*');
-							}catch(e){alert(e.message);}
-						};	
-					}, function (error) {
-						alert('Error: ' + error);
-					},{maximumImagesCount: 2,width: 1000,height: 1000,quality: 40, outputType: 1}
-				);
-				
-			} catch (e) { alert(e.message);}
+			window.imagePicker.hasReadPermission(function(result) {
+				window.imagePicker.requestReadPermission();				
+			});
 		}
-		
-		
 		
 		function ObtenerQR(){
 			QRScanner.prepare(function(err, status){
