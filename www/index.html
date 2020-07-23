@@ -65,15 +65,10 @@
 			});			
 		}
 		
-		window.onload= function(){						
-			window.setTimeout(function(){
-				if(!isPhonegapApp){
-					ondeviceready();
-				}
-			},10000);
+		window.onload= function(){									
+			try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
 		}		
 		
-		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
 		function ondeviceready(ev) {
 			if(ev) EjecutarRemoto({funcion:"IsPhoneGap"},'*');
 			if(!window.navigator.onLine){
