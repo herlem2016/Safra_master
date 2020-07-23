@@ -67,14 +67,6 @@
 		
 		
 		window.onload= function(){
-			ondeviceready();
-		}		
-		
-		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
-		function ondeviceready(ev) {
-
-			if(ev) EjecutarRemoto({funcion:"IsPhoneGap"},'*');
-		
 			if(!window.navigator.onLine){
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
@@ -82,8 +74,13 @@
 			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
 				document.body.innerHTML=dom;
 				IniciarApp();
-			});
+			});			
 			
+		}		
+		
+		try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
+		function ondeviceready(ev) {
+			if(ev) EjecutarRemoto({funcion:"IsPhoneGap"},'*');
 			FCMPlugin.onNotification(function(data){
 				cordova.plugins.backgroundMode.enable();
 				cordova.plugins.backgroundMode.moveToBackground();
@@ -130,7 +127,7 @@
 							};	
 						}, function (error) {
 							alert('Error: ' + error);
-						},{maximumImagesCount: 2,width: 1000,height: 1000,quality: 40, outputType: 1}
+						},{maximumImagesCount: 1,width: 1000,height: 1000,quality: 40, outputType: 1}
 					);
 				}else{					
 					window.imagePicker.requestReadPermission();
