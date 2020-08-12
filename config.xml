@@ -13,7 +13,7 @@
 	
   <platform name="android">	
     <icon src="www/img/icon.png" /> 
-    <resource-file src="google-services.json" target="google-services.json" />
+    <resource-file src="google-services.json" target="app/google-services.json" />
 	<preference name="android-targetSdkVersion" value="28" />
 	<preference name="SplashScreen" value="screen" />
 	<preference name="SplashScreenBackgroundColor" value="0x0000FFFF"/>
@@ -56,10 +56,8 @@
         <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" />
     </platform>
 	
-  <preference name='phonegap-version' value='cli-9.0.0' />
-  <plugin name="cordova-plugin-background-mode" spec="0.7.3" source="npm" />	
+  <preference name='phonegap-version' value='cli-9.0.0' />	
   <plugin name="cordova-plugin-qrscanner" spec="3.0.1" source="npm" />	
-  <plugin name="cordova-plugin-autostart" spec="2.3.0" source="npm" />	
   <plugin name="cordova-plugin-fcm-with-dependency-updated-apns" spec="~1.2.0" source="npm" />   
   <plugin name="cordova-plugin-inappbrowser" source="npm"/>
   <gap:plugin name="cordova-plugin-whitelist" source="npm" />
