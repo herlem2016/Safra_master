@@ -83,10 +83,10 @@
             <application android:usesCleartextTraffic="true" />
         </edit-config>
 		
-		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
+		<!--<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
 			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
 		</edit-config>
-		
+		-->
     </platform>
 	
 </widget>
