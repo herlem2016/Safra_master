@@ -59,7 +59,8 @@
     </platform>
 	
   <preference name='phonegap-version' value='cli-9.0.0' />	
-  <plugin name="cordova-plugin-qrscanner" spec="3.0.1" source="npm" />	  
+  <plugin name="cordova-plugin-qrscanner" spec="3.0.1" source="npm" />	
+  <plugin name="cordova-plugin-fcm-with-dependency-updated-apns" spec="~1.2.1" source="npm" />   
   <plugin name="cordova-plugin-inappbrowser" source="npm"/>
   <gap:plugin name="cordova-plugin-whitelist" source="npm" />
   <plugin name="cordova-plugin-file-transfer" source="npm" />
@@ -78,7 +79,8 @@
   <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
-        </edit-config>		
+        </edit-config>
+		
 		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
 			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
 		</edit-config>
