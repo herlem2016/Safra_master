@@ -15,17 +15,14 @@
     <icon src="www/img/icon.png" /> 
     <resource-file src="google-services.json" target="app/google-services.json" />
 	<preference name="android-targetSdkVersion" value="28" />
-	<preference name="android-minSdkVersion" value="23" />
 	<preference name="SplashScreen" value="screen" />
 	<preference name="SplashScreenBackgroundColor" value="0x0000FFFF"/>
     <preference name="SplashScreenDelay" value="10000" />
 	<splash src="www/img/splash.png" />
   </platform>
-	
-  
+	  
 	<platform name="ios">
-		<resource-file src="GoogleService-Info.plist" />
-		
+		<resource-file src="GoogleService-Info.plist" />		
 	</platform>
    
     <platform name="ios">
@@ -59,7 +56,9 @@
     </platform>
 	
   <preference name='phonegap-version' value='cli-9.0.0' />	
+  <plugin name="cordova-plugin-background-mode" spec="0.7.3" source="npm" />
   <plugin name="cordova-plugin-qrscanner" spec="3.0.1" source="npm" />	
+  <plugin name="cordova-plugin-autostart" spec="2.3.0" source="npm" />
   <plugin name="cordova-plugin-fcm-with-dependency-updated-apns" spec="~1.2.1" source="npm" />   
   <plugin name="cordova-plugin-inappbrowser" source="npm"/>
   <gap:plugin name="cordova-plugin-whitelist" source="npm" />
@@ -85,8 +84,7 @@
 		
 		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
 			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
-		</edit-config>
-		
+		</edit-config>		
     </platform>
 	
 </widget>
