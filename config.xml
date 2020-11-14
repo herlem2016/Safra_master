@@ -25,6 +25,7 @@
   
 	<platform name="ios">
 		<resource-file src="GoogleService-Info.plist" />
+		
 	</platform>
    
     <platform name="ios">
@@ -82,9 +83,6 @@
             <application android:usesCleartextTraffic="true" />
         </edit-config>
 		
-		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
-			<activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
-		</edit-config>
 		
     </platform>
 	
