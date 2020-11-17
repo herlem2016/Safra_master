@@ -85,9 +85,9 @@
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
 			
+			alert(3);
 			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
 				document.body.innerHTML=dom;
-				alert(3);
 				IniciarApp();
 			});
 			
