@@ -144,6 +144,7 @@
 		}
 		
 		function ObtenerQR(){
+			alert("qr-fin");
 			QRScanner.prepare(function(err, status){
 			  if (err) {
 				   alert("Ocurrio un error al inicializar escaner");
@@ -159,7 +160,6 @@
 				alert('qr');
 				QRScanner.show();
 				$("body").addClass("transparent-body");
-				alert("qr-fin");
 			  } else if (status.denied) {
 				alert("No se habilitaron permisos de escaner");
 			  } else {
