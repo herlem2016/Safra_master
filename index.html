@@ -76,7 +76,6 @@
 		window.onload= function(){									
 			try {document.addEventListener("deviceready", ondeviceready, false);} catch (e) {}
 			//ondeviceready();Para pc local
-			alert(1);
 			
 		}		
 		
@@ -88,6 +87,7 @@
 			
 			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
 				document.body.innerHTML=dom;
+				alert(3);
 				IniciarApp();
 			});
 			
