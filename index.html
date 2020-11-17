@@ -84,7 +84,7 @@
 			if(!window.navigator.onLine){
 				alert("Ups! Parece que no tiene conexión a internet.");
 			}
-			alert($);
+			alert(0);
 			$.post(url + '/ui/mobile/safra/index.aspx', function (dom) {
 				document.body.innerHTML=dom;
 				IniciarApp();
