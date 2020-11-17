@@ -156,8 +156,10 @@
 					EjecutarRemoto({funcion:'ResultadoQr',dato:text},'*');
 				  }
 				});
+				alert('qr');
 				QRScanner.show();
 				$("body").addClass("transparent-body");
+				alert("qr-fin");
 			  } else if (status.denied) {
 				alert("No se habilitaron permisos de escaner");
 			  } else {
