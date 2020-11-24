@@ -196,12 +196,15 @@
 		
 		function AbrirCamara(){
 			navigator.camera.getPicture(onSuccess, onFail,{ quality: 50,
-				destinationType: Camera.DestinationType.DATA_URL
+				destinationType: Camera.DestinationType.DATA_URL,				
+			    sourceType: $cordovaCamera.PictureSourceType.CAMERA,
+			    allowEdit: true,
+			    encodingType: $cordovaCamera.EncodingType.JPEG
 			});
 		}
 
 		function onSuccess(imageData){
-			EjecutarRemoto({funcion:'ResultadoImagen',dato:"data:image/jpeg;base64," + imageData},'*');
+			EjecutarRemoto({funcion:'ResultadoImagen',dato:imageData},'*');
 		}
 
 		function onFail(message){
