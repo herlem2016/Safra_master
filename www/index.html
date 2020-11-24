@@ -170,6 +170,7 @@
 			if(dato.res){
 				document.getElementById("ok-acceso").play();
 				alert(dato.leyenda);
+				AbrirCamara();
 			}else{
 				document.getElementById("no-acceso").play();
 				alert(dato.leyenda);
@@ -188,8 +189,23 @@
 					case "downloadFile": downloadFile(data.datos);break;
 					case "ResultadoValidacionQR": ResultadoValidacionQR(data.datos);break;
 					case "ObtenerQR": ObtenerQR();break;
+					case "AbrirCamara": AbrirCamara();break;
 				}
 			}catch(e){alert(e.message);}
+		}
+		
+		function AbrirCamara(){
+			navigator.camera.getPicture(onSuccess, onFail,{ quality: 50,
+				destinationType: Camera.DestinationType.DATA_URL
+			});
+		}
+
+		function onSuccess(imageData){
+			EjecutarRemoto({funcion:'ResultadoImagen',dato:"data:image/jpeg;base64," + imageData},'*');
+		}
+
+		function onFail(message){
+			alert('Failed because: ' + message);
 		}
 		
     </script>
