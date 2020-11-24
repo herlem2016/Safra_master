@@ -196,10 +196,8 @@
 		
 		function AbrirCamara(){
 			navigator.camera.getPicture(onSuccess, onFail,{ quality: 50,
-				destinationType: Camera.DestinationType.DATA_URL,				
-			    sourceType: $cordovaCamera.PictureSourceType.CAMERA,
-			    allowEdit: true,
-			    encodingType: $cordovaCamera.EncodingType.JPEG
+				destinationType: Camera.DestinationType.DATA_URL,		
+			    allowEdit: true
 			});
 		}
 
