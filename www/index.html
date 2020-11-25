@@ -167,10 +167,12 @@
 		}
 		
 		function ResultadoValidacionQR(dato){
-			if(dato.res){
+			if(dato.res==true && dato.solicitar_id==1){
 				document.getElementById("ok-acceso").play();
 				alert(dato.leyenda);
 				AbrirCamara();
+			}else if(dato.solicitar_id==0){
+				alert(dato.leyenda);
 			}else{
 				document.getElementById("no-acceso").play();
 				alert(dato.leyenda);
